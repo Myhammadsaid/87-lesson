@@ -1,0 +1,106 @@
+@media (max-width: 1115px) {
+  body {
+    margin-top: 50px !important;
+  }
+  .header__top__nav {
+    justify-content: center !important;
+    gap: 15px !important;
+  }
+  .header__bottom {
+    display: none;
+  }
+  .header__top__items {
+    gap: 15px !important;
+  }
+  .header__top__items:first-child {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #f7ebe5;
+    padding: 12px 0;
+  }
+  .header__top__item {
+    font-size: 12px !important;
+    white-space: nowrap;
+  }
+  .footer-items {
+    justify-content: center !important;
+  }
+  .footer-item {
+    display: none !important;
+  }
+  .footer-item:first-child {
+    display: grid !important;
+  }
+}
+
+@media (max-width: 850px) {
+  .products__card {
+    max-width: 250px !important;
+  }
+
+  .products__card__par {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .products__card__img {
+    width: 100% !important;
+    height: 200px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .product__card__content {
+    padding: 10px !important;
+  }
+  .model {
+    width: 380px !important;
+    padding: 15px !important;
+  }
+  .header__top__items span {
+    display: none;
+  }
+  .products__card {
+    max-width: 190px !important;
+  }
+  .products__card__text {
+    font-size: 14px !important;
+  }
+  .products__card__par {
+    margin-bottom: 10px !important;
+  }
+  .product__card__price {
+    font-size: 14px !important;
+  }
+  .products__btn {
+    width: 190px !important;
+  }
+  .header__top__items {
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 470px) {
+  .products__card {
+    max-width: 165px !important;
+    gap: 10px !important;
+  }
+  .product__card__price {
+    font-size: 14px !important;
+  }
+  .products__card__img {
+    height: 160px !important;
+  }
+  .products__card__text {
+    margin-bottom: 8px !important;
+  }
+  .product__card__shop {
+    font-size: 12px !important;
+    gap: 3px !important;
+  }
+  .product__card__shop img {
+    display: none !important;
+  }
+}

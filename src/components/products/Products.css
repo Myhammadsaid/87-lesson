@@ -1,0 +1,146 @@
+.products {
+  background: #f7f7f7;
+  padding: 41px 0;
+}
+
+.products__title {
+  color: #29292975;
+  margin-bottom: 22px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17.05px;
+  text-align: center;
+}
+
+.products__title span {
+  color: rgba(0, 0, 255, 0.521);
+}
+
+.products__text {
+  color: #292929;
+  margin-bottom: 38px;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 36.57px;
+  text-align: center;
+}
+
+.products__items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 41px;
+  gap: 10px;
+}
+
+.items2 {
+  gap: 20px !important;
+  justify-content: start !important;
+}
+
+.product__items__text {
+  background: #f7ebe5;
+  border-radius: 100px;
+  padding: 15px;
+  color: #292929d4;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17.05px;
+  text-align: center;
+}
+
+.products__cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 41px;
+  gap: 30px;
+}
+
+.products__card {
+  max-width: 370px;
+  display: grid;
+  grid-template-columns: auto;
+  background: #ffffff;
+  border: 1px solid #ededf0;
+  border-radius: 5px;
+  gap: 20px;
+}
+
+.products__card__img {
+  width: 370px;
+  height: 300px;
+  object-fit: contain;
+  transition: 0.2s;
+}
+
+.products__card__img:hover {
+  transform: scale(1.1);
+}
+
+.product__card__content {
+  display: grid;
+  padding: 21px;
+  grid-template-columns: auto;
+}
+
+.products__card__text {
+  color: #292929;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21.94px;
+  margin-bottom: 14px;
+}
+
+.products__card__par {
+  color: #292929;
+  margin-bottom: 37px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17.05px;
+}
+
+.product__card__items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product__card__price {
+  color: #e7426a;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21.94px;
+}
+
+.product__card__shop {
+  color: #000000e0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17.07px;
+}
+
+.products__btn {
+  width: 293px;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #4e9dd3;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17.07px;
+  transition: 0.2s;
+  background: none;
+}
+
+.products__btn:hover {
+  transform: scale(1.1);
+}
