@@ -12,17 +12,19 @@ const Products = () => {
   const [detail, setDetail] = useState(null);
   const [detailLoading, setDetailLoading] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [detailError, setDetailError] = useState(null);
 
   let id = SearchParams.get("detail");
   useEffect(() => {
     if (id) {
       setDetailLoading(true);
+      setDetailError(null);
       axios
         .get(`/products/${id}`)
         .then((res) => {
           setDetail(res.data);
         })
-        .catch((err) => console.log(err))
+        .catch((err) => setDetailError(err.response.data.message))
         .finally(() => setDetailLoading(false));
     }
   }, [SearchParams]);
@@ -112,6 +114,8 @@ const Products = () => {
         <Model detail={closeDetail}>
           {detailLoading ? (
             <h2>Loading...</h2>
+          ) : detailError ? (
+            <h2>{detailError}</h2>
           ) : (
             <div>
               <img
