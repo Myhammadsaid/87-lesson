@@ -10,17 +10,20 @@ const Products = () => {
   const [data, setData] = useState(null);
   const [SearchParams, setSearchParams] = useSearchParams();
   const [detail, setDetail] = useState(null);
+  const [detailLoading, setDetailLoading] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  let id = SearchParams.get("detail");
   useEffect(() => {
-    let id = SearchParams.get("detail");
     if (id) {
+      setDetailLoading(true);
       axios
         .get(`/products/${id}`)
         .then((res) => {
           setDetail(res.data);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => console.log(err))
+        .finally(() => setDetailLoading(false));
     }
   }, [SearchParams]);
 
@@ -105,25 +108,29 @@ const Products = () => {
           <button className="products__btn">Показать ещё</button>
         </div>
       </section>
-      {detail ? (
+      {SearchParams.get("detail") ? (
         <Model detail={closeDetail}>
-          <div>
-            <img
-              className="products__card__img"
-              src={detail.images[0]}
-              alt={detail.title}
-            />
-            <h3 className="products__card__text">{detail.title}</h3>
-            <p className="products__card__par" title={detail.description}>
-              {detail.description}
-            </p>
-            <div className="product__card__items items2">
-              <h3 className="product__card__price">{detail.price} руб</h3>
-              <a href="#" className="product__card__shop">
-                <img src={cart} alt="cart" /> В корзину
-              </a>
+          {detailLoading ? (
+            <h2>Loading...</h2>
+          ) : (
+            <div>
+              <img
+                className="products__card__img"
+                src={detail?.images[0]}
+                alt={detail?.title}
+              />
+              <h3 className="products__card__text">{detail?.title}</h3>
+              <p className="products__card__par" title={detail?.description}>
+                {detail?.description}
+              </p>
+              <div className="product__card__items items2">
+                <h3 className="product__card__price">{detail?.price} руб</h3>
+                <a href="#" className="product__card__shop">
+                  <img src={cart} alt="cart" /> В корзину
+                </a>
+              </div>
             </div>
-          </div>
+          )}
         </Model>
       ) : (
         <></>
